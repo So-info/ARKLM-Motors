@@ -2375,3 +2375,271 @@ footer .footer-map:hover {
 .footer-bottom span b:hover {
     color: #fff;
 }
+
+footer .footer-grid > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+footer .footer-grid > div:nth-child(2) h4 {
+    margin-bottom: 12px;
+}
+
+.about-page-body {
+    background:#08090a;
+    color:#fff;
+}
+
+/* =========================================================
+   ARKLM — BARRE MOBILE 2 BOUTONS
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .mobile-bar {
+        position: fixed !important;
+        left: 19px !important;
+        right: 19px !important;
+        bottom: 9px !important;
+
+        height: 58px !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+
+        background: rgba(5,6,7,.97) !important;
+
+        border: 1px solid rgba(255,255,255,.16) !important;
+        border-radius: 8px !important;
+
+        overflow: hidden !important;
+
+        z-index: 99999 !important;
+
+        box-shadow:
+            0 12px 35px rgba(0,0,0,.55),
+            0 0 25px rgba(255,32,53,.08) !important;
+    }
+
+    .mobile-action {
+        min-width: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4px !important;
+
+        color: #fff !important;
+        text-decoration: none !important;
+
+        border-right: 1px solid rgba(255,255,255,.14) !important;
+
+        background: transparent !important;
+
+        transition:
+            background .2s ease,
+            color .2s ease !important;
+    }
+
+    .mobile-action:last-child {
+        border-right: 0 !important;
+    }
+
+    .mobile-action:hover,
+    .mobile-action:active {
+        background: #ff2035 !important;
+        color: #fff !important;
+    }
+
+    .mobile-icon {
+        font-size: 15px !important;
+        line-height: 1 !important;
+    }
+
+    .mobile-action small {
+        font-size: 7px !important;
+        font-weight: 900 !important;
+        letter-spacing: .7px !important;
+        text-transform: uppercase !important;
+    }
+
+    /* évite que le contenu soit caché derrière la barre */
+    .about-page-body {
+        padding-bottom: 80px !important;
+    }
+}
+
+/* =========================================================
+   ARKLM — BARRE MOBILE FINALE
+   2 BOUTONS UNIQUEMENT
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .mobile-bar {
+        position: fixed !important;
+
+        left: 8px !important;
+        right: 8px !important;
+        bottom: 8px !important;
+
+        width: auto !important;
+        height: 58px !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+        gap: 0 !important;
+
+        background: rgba(7,9,10,.97) !important;
+
+        border: 1px solid rgba(255,255,255,.16) !important;
+        border-radius: 9px !important;
+
+        overflow: hidden !important;
+
+        z-index: 99999 !important;
+
+        box-shadow:
+            0 12px 40px rgba(0,0,0,.55) !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =========================================
+       CACHE L'ANCIEN 3e BOUTON
+       ========================================= */
+
+    .mobile-bar > :nth-child(3) {
+        display: none !important;
+    }
+
+
+    /* =========================================
+       BOUTONS
+       ========================================= */
+
+    .mobile-bar > .mobile-action,
+    .mobile-bar > span {
+        min-width: 0 !important;
+        width: auto !important;
+        height: 100% !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 4px !important;
+
+        color: #fff !important;
+        text-decoration: none !important;
+
+        background: transparent !important;
+
+        border: 0 !important;
+        border-right: 1px solid rgba(255,255,255,.13) !important;
+
+        overflow: hidden !important;
+    }
+
+
+    .mobile-bar > :last-child {
+        border-right: 0 !important;
+    }
+
+
+    /* =========================================
+       ICÔNES
+       ========================================= */
+
+    .mobile-bar .mobile-icon {
+        width: 22px !important;
+        height: 20px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        color: #fff !important;
+
+        font-size: 15px !important;
+        line-height: 1 !important;
+    }
+
+
+    /* Anciennes versions avec icône directement
+       dans un span */
+
+    .mobile-bar > span:first-child {
+        color: #fff !important;
+        font-size: 15px !important;
+    }
+
+    .mobile-bar > span:nth-child(2) {
+        color: #fff !important;
+        font-size: 15px !important;
+    }
+
+
+    /* =========================================
+       TEXTE
+       ========================================= */
+
+    .mobile-bar small {
+        display: block !important;
+
+        color: #bfc3c5 !important;
+
+        font-size: 7px !important;
+        font-weight: 900 !important;
+
+        line-height: 1 !important;
+
+        letter-spacing: .65px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =========================================
+       EFFET APPUI
+       ========================================= */
+
+    .mobile-bar > a:active,
+    .mobile-bar > span:active {
+        background: rgba(255,255,255,.07) !important;
+    }
+
+
+    /* =========================================
+       ESPACE POUR LA BARRE
+       ========================================= */
+
+    body {
+        padding-bottom: 78px !important;
+    }
+}
+
+
+/* =============================================
+   PC : BARRE INVISIBLE
+   ============================================= */
+
+@media (min-width: 651px) {
+
+    .mobile-bar {
+        display: none !important;
+    }
+
+    body {
+        padding-bottom: 0 !important;
+    }
+}

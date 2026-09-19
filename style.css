@@ -883,3 +883,89 @@ img{max-width:100%;height:auto}
     border-bottom: none !important;
   }
 }
+
+/* =====================================================
+   ARKLM - MENU MOBILE - CORRECTION DEFINITIVE
+   ===================================================== */
+
+@media (max-width: 650px) {
+
+  /* Le bouton reste au-dessus de tout */
+  .menu-toggle {
+    position: relative !important;
+    z-index: 10000 !important;
+    display: flex !important;
+  }
+
+  /* MENU FERME */
+  .nav nav {
+    display: none !important;
+  }
+
+  /* MENU OUVERT */
+  .nav nav.open,
+  .nav .menu-toggle[aria-expanded="true"] + nav {
+    display: flex !important;
+
+    position: fixed !important;
+
+    top: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    max-height: calc(100vh - 64px) !important;
+
+    overflow-y: auto !important;
+
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+
+    gap: 0 !important;
+
+    padding: 10px 20px 25px !important;
+
+    background: #050607 !important;
+
+    border-top: 1px solid #292e31 !important;
+    border-bottom: 1px solid #292e31 !important;
+
+    z-index: 9999 !important;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.6) !important;
+  }
+
+  /* Liens */
+  .nav nav.open a,
+  .nav .menu-toggle[aria-expanded="true"] + nav a {
+    display: block !important;
+
+    width: 100% !important;
+
+    padding: 17px 10px !important;
+
+    text-align: center !important;
+
+    color: #fff !important;
+
+    font-family: Manrope, Arial, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+
+    border-bottom: 1px solid #24282b !important;
+  }
+
+  .nav nav.open a:last-child,
+  .nav .menu-toggle[aria-expanded="true"] + nav a:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Pas de soulignement desktop */
+  .nav nav.open a::after {
+    display: none !important;
+  }
+
+}

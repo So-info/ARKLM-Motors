@@ -1,92 +1,243 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menu = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav nav");
+document.addEventListener("DOMContentLoaded", function () {
 
-  // Menu mobile
-  if (menu && nav) {
-    menu.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
+  const menuButton = document.querySelector(".menu-toggle");
 
-      menu.setAttribute("aria-expanded", String(open));
+  if (!menuButton) return;
 
-      menu.querySelectorAll("span").forEach((span, index) => {
-        if (open) {
-          span.style.transform =
-            index === 1
-              ? "scaleX(0)"
-              : index === 0
-              ? "translateY(7px) rotate(45deg)"
-              : "translateY(-7px) rotate(-45deg)";
-        } else {
-          span.style.transform = "";
-        }
+  let menuOpen = false;
+  let mobileMenu = null;
+
+
+  /* ==========================================
+     OUVRIR LE MENU
+     ========================================== */
+
+  function ouvrirMenu() {
+
+    if (mobileMenu) return;
+
+    menuOpen = true;
+
+    menuButton.setAttribute("aria-expanded", "true");
+
+
+    /* Création du menu */
+
+    mobileMenu = document.createElement("div");
+
+    mobileMenu.id = "arklm-mobile-menu";
+
+
+    mobileMenu.innerHTML = `
+      <div class="arklm-menu-inner">
+
+        <a href="index.html">ACCUEIL</a>
+
+        <a href="tarifs.html">TARIFS</a>
+
+        <a href="location.html">LOCATION</a>
+
+        <a href="nettoyage.html">NETTOYAGE</a>
+
+        <a href="mecanique.html">MÉCANIQUE</a>
+
+        <a href="carrosserie.html">CARROSSERIE</a>
+
+        <a href="apropos.html">À PROPOS</a>
+
+        <a href="contact.html">CONTACT</a>
+
+      </div>
+    `;
+
+
+    /* Style du menu */
+
+    mobileMenu.style.cssText = `
+      position: fixed !important;
+      top: 66px !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+
+      width: 100% !important;
+      height: calc(100vh - 66px) !important;
+
+      display: block !important;
+
+      background: #050607 !important;
+
+      z-index: 999999 !important;
+
+      overflow-y: auto !important;
+
+      box-sizing: border-box !important;
+    `;
+
+
+    /* Style intérieur */
+
+    const inner = mobileMenu.querySelector(".arklm-menu-inner");
+
+    inner.style.cssText = `
+      width: 100% !important;
+      box-sizing: border-box !important;
+
+      display: flex !important;
+      flex-direction: column !important;
+
+      padding: 20px 25px 40px !important;
+    `;
+
+
+    /* Style des liens */
+
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
+
+      link.style.cssText = `
+        display: block !important;
+
+        width: 100% !important;
+        box-sizing: border-box !important;
+
+        padding: 22px 10px !important;
+
+        color: #ffffff !important;
+
+        background: transparent !important;
+
+        text-align: center !important;
+
+        font-family: Arial, sans-serif !important;
+
+        font-size: 14px !important;
+        font-weight: 800 !important;
+
+        letter-spacing: 2px !important;
+
+        text-decoration: none !important;
+
+        border-bottom: 1px solid #292e31 !important;
+      `;
+
+
+      link.addEventListener("click", function () {
+        fermerMenu();
       });
+
     });
 
-    // Fermer le menu après avoir choisi une page
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("open");
-        menu.setAttribute("aria-expanded", "false");
 
-        menu.querySelectorAll("span").forEach(span => {
-          span.style.transform = "";
-        });
-      });
-    });
+    document.body.appendChild(mobileMenu);
+
+
+    /* Transformation ☰ → ✕ */
+
+    const spans = menuButton.querySelectorAll("span");
+
+    if (spans.length >= 3) {
+
+      spans[0].style.transform =
+        "translateY(7px) rotate(45deg)";
+
+      spans[1].style.transform =
+        "scaleX(0)";
+
+      spans[2].style.transform =
+        "translateY(-7px) rotate(-45deg)";
+    }
+
   }
 
-  // Année automatique dans le footer
-  document.querySelectorAll("#year").forEach(el => {
-    el.textContent = new Date().getFullYear();
+
+  /* ==========================================
+     FERMER LE MENU
+     ========================================== */
+
+  function fermerMenu() {
+
+    menuOpen = false;
+
+    menuButton.setAttribute("aria-expanded", "false");
+
+
+    if (mobileMenu) {
+
+      mobileMenu.remove();
+
+      mobileMenu = null;
+    }
+
+
+    /* ✕ → ☰ */
+
+    const spans = menuButton.querySelectorAll("span");
+
+    spans.forEach(function (span) {
+      span.style.transform = "";
+    });
+
+  }
+
+
+  /* ==========================================
+     CLIC SUR LE BOUTON
+     ========================================== */
+
+  menuButton.addEventListener("click", function (event) {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+
+    if (menuOpen) {
+
+      fermerMenu();
+
+    } else {
+
+      ouvrirMenu();
+
+    }
+
   });
 
-  // Animations d'apparition
-  const elements = document.querySelectorAll(
-    ".service-card,.stat-grid>div,.about-copy,.about-points>div,.location-copy,.garage-photo,.hours,.rental,.price-list article,.mechanic-grid article,.steps div,.values div,.contact-card"
-  );
 
-  elements.forEach(el => el.classList.add("reveal"));
+  /* ==========================================
+     ANNÉE DU FOOTER
+     ========================================== */
 
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
+  document.querySelectorAll("#year").forEach(function (element) {
 
-    elements.forEach(el => observer.observe(el));
-  }
+    element.textContent = new Date().getFullYear();
 
-  // Barre de progression
-  const progress = document.createElement("div");
-  progress.className = "scroll-progress";
-  document.body.appendChild(progress);
+  });
 
-  window.addEventListener("scroll", () => {
-    const height =
-      document.documentElement.scrollHeight - window.innerHeight;
 
-    progress.style.width =
-      (height ? window.scrollY / height * 100 : 0) + "%";
-  }, { passive: true });
+  /* ==========================================
+     SCROLL DOUX
+     ========================================== */
 
-  // Défilement doux des ancres
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", event => {
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+    link.addEventListener("click", function (event) {
+
       const target = document.querySelector(
         link.getAttribute("href")
       );
 
       if (target) {
+
         event.preventDefault();
+
         target.scrollIntoView({
           behavior: "smooth"
         });
+
       }
+
     });
+
   });
+
 });

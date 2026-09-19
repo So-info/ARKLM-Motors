@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ARKLM Motors — Tarifs et prestations du garage automobile à Elne.">
+  <title>ARKLM Motors — Tarifs</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== PAGE TARIFS ===== */
+    .tarifs-page { background:#f6f6f3; color:#151719; }
+    .tarifs-hero {
+      margin-top:82px;
+      background:#050607;
+      color:#fff;
+      padding:90px 0 70px;
+      position:relative;
+      overflow:hidden;
+    }
+    .tarifs-hero:after {
+      content:"";
+      position:absolute;
+      width:520px;height:520px;
+      right:-260px;top:-180px;
+      border:1px solid rgba(255,32,53,.45);
+      border-radius:50%;
+    }
+    .tarifs-hero h1 {
+      font:900 clamp(58px,8vw,100px)/.82 "Barlow Condensed";
+      margin:15px 0;
+      letter-spacing:-2px;
+    }
+    .tarifs-hero h1 em { font-style:normal;color:var(--red); }
+    .tarifs-hero p { max-width:520px;color:#9aa1a5;font-size:13px;line-height:1.8; }
+
+    .tarifs-section { padding:70px 0; }
+    .tarifs-section.dark { background:#08090a;color:#fff; }
+    .tarifs-head { margin-bottom:30px; }
+    .tarifs-head .eyebrow { color:var(--red); }
+    .tarifs-head h2 {
+      font:900 clamp(42px,6vw,68px)/.88 "Barlow Condensed";
+      margin:10px 0;
+    }
+    .tarifs-head h2 em { font-style:normal;color:var(--red); }
+
+    .tarifs-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .tarif-card {
+      background:#fff;
+      border:1px solid #d9dbdc;
+      padding:28px;
+      min-height:180px;
+      position:relative;
+    }
+    .dark .tarif-card { background:#111416;border-color:#292e31; }
+    .tarif-card .number {
+      color:var(--red);
+      font:800 12px "Barlow Condensed";
+      letter-spacing:2px;
+    }
+    .tarif-card h3 {
+      font:900 25px/.95 "Barlow Condensed";
+      margin:14px 0 8px;
+    }
+    .tarif-card p {
+      color:#777;
+      font-size:10px;
+      line-height:1.6;
+      margin:0;
+    }
+    .dark .tarif-card p { color:#92999d; }
+    .tarif-price {
+      display:block;
+      margin-top:20px;
+      font:900 46px/.8 "Barlow Condensed";
+      color:var(--red);
+    }
+    .tarif-price small {
+      font:800 10px Manrope;
+      color:#777;
+    }
+    .dark .tarif-price small { color:#92999d; }
+
+    .tarifs-list {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+      background:#d7d9da;
+      margin-top:28px;
+    }
+    .tarifs-list div {
+      background:#fff;
+      padding:20px;
+      font-size:11px;
+      font-weight:700;
+    }
+    .tarifs-list b { color:var(--red); margin-right:8px; }
+
+    .tarifs-note {
+      margin-top:20px;
+      padding:18px 20px;
+      border-left:3px solid var(--red);
+      background:#fff;
+      color:#777;
+      font-size:10px;
+      line-height:1.7;
+    }
+    .dark .tarifs-note { background:#111416;color:#92999d; }
+
+    .tarifs-cta {
+      background:var(--red);
+      color:#fff;
+      padding:60px 0;
+    }
+    .tarifs-cta-inner {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .tarifs-cta h2 {
+      font:900 52px/.9 "Barlow Condensed";
+      margin:0;
+    }
+    .tarifs-cta .hero-btn {
+      background:#08090a;
+      color:#fff;
+      min-width:260px;
+    }
+
+    @media(max-width:650px){
+      .tarifs-hero { margin-top:66px;padding:72px 0 55px; }
+      .tarifs-hero h1 { font-size:62px; }
+      .tarifs-section { padding:50px 0; }
+      .tarifs-grid { grid-template-columns:1fr; gap:8px; }
+      .tarif-card { min-height:0;padding:25px; }
+      .tarifs-list { grid-template-columns:1fr; }
+      .tarifs-cta-inner { display:flex;flex-direction:column;align-items:stretch; }
+      .tarifs-cta h2 { font-size:45px; }
+      .tarifs-cta .hero-btn { width:100%; }
+    }
+  </style>
+</head>
+
+<body class="tarifs-page">
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">ARK<span>LM</span></span>
+      <small>MOTORS</small>
+    </a>
+
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a class="active" href="tarifs.html">Tarifs</a>
+      <a href="location.html">Location</a>
+      <a href="nettoyage.html">Nettoyage</a>
+      <a href="mecanique.html">Mécanique</a>
+      <a href="carrosserie.html">Carrosserie</a>
+      <a href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="tel" href="tel:+33603957834">☎ 06 03 95 78 34</a>
+      <a class="nav-cta" href="contact.html">PRENDRE RDV <b>→</b></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="tarifs-hero">
+    <div class="container">
+      <div class="eyebrow">ARKLM MOTORS · ELNE</div>
+      <h1>NOS <em>TARIFS.</em></h1>
+      <p>
+        Des tarifs transparents pour l'entretien, la mécanique,
+        le nettoyage et la location de votre véhicule.
+      </p>
+    </div>
+  </section>
+
+  <section class="tarifs-section">
+    <div class="container">
+      <div class="tarifs-head">
+        <div class="eyebrow">MÉCANIQUE</div>
+        <h2>NOS TAUX HORAIRES <em>TTC.</em></h2>
+      </div>
+
+      <div class="tarifs-grid">
+        <article class="tarif-card">
+          <span class="number">01</span>
+          <h3>VIDANGE</h3>
+          <p>Intervention mécanique et entretien.</p>
+          <span class="tarif-price">55€ <small>/ heure TTC</small></span>
+        </article>
+
+        <article class="tarif-card">
+          <span class="number">02</span>
+          <h3>PETITE MÉCANIQUE & RÉVISION</h3>
+          <p>Entretien courant et révision du véhicule.</p>
+          <span class="tarif-price">65€ <small>/ heure TTC</small></span>
+        </article>
+
+        <article class="tarif-card">
+          <span class="number">03</span>
+          <h3>EMBRAYAGE · DISTRIBUTION · GROSSE MÉCANIQUE</h3>
+          <p>Interventions mécaniques plus importantes.</p>
+          <span class="tarif-price">75€ <small>/ heure TTC</small></span>
+        </article>
+      </div>
+
+      <div class="tarifs-list">
+        <div><b>01</b> Montage & équilibrage pneus</div>
+        <div><b>02</b> Recharge climatisation</div>
+        <div><b>03</b> Location de véhicules</div>
+        <div><b>04</b> Passage valise</div>
+        <div><b>05</b> Nettoyage automobile</div>
+        <div><b>06</b> Gardiennage sécurisé — <strong>10€ / jour</strong></div>
+      </div>
+
+      <div class="tarifs-note">
+        Vous pouvez fournir vos propres pièces pour vos réparations mécaniques.
+      </div>
+    </div>
+  </section>
+
+  <section class="tarifs-section dark">
+    <div class="container">
+      <div class="tarifs-head">
+        <div class="eyebrow">NETTOYAGE AUTOMOBILE</div>
+        <h2>DES FORFAITS <em>CLÉ EN MAIN.</em></h2>
+      </div>
+
+      <div class="tarifs-grid">
+        <article class="tarif-card">
+          <span class="number">01</span>
+          <h3>INTÉRIEUR</h3>
+          <p>Aspiration complète, dépoussiérage, nettoyage des plastiques, vitres et finition.</p>
+          <span class="tarif-price">40€</span>
+        </article>
+
+        <article class="tarif-card">
+          <span class="number">02</span>
+          <h3>INTÉRIEUR · DÉSINFECTION À LA SHAMPOUINEUSE</h3>
+          <p>Aspiration en profondeur, shampoing sièges et tapis, désinfection.</p>
+          <span class="tarif-price">60€</span>
+        </article>
+
+        <article class="tarif-card">
+          <span class="number">03</span>
+          <h3>INTÉRIEUR & EXTÉRIEUR COMPLET</h3>
+          <p>Lavage extérieur, nettoyage intérieur complet, polish lustrage.</p>
+          <span class="tarif-price">110€</span>
+        </article>
+
+        <article class="tarif-card">
+          <span class="number">04</span>
+          <h3>RÉNOVATION PHARE · TRAITEMENT ANTI-UV</h3>
+          <p>Redonne transparence et éclat aux phares.</p>
+          <span class="tarif-price">40€ <small>les 2</small></span>
+        </article>
+
+        <article class="tarif-card">
+          <span class="number">05</span>
+          <h3>RECHARGE CLIM</h3>
+          <p>Recharge de climatisation pour un air frais et sain.</p>
+          <span class="tarif-price">60€ <small>à partir de</small></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tarifs-section">
+    <div class="container">
+      <div class="tarifs-head">
+        <div class="eyebrow">PNEUMATIQUES</div>
+        <h2>MONTAGE & ÉQUILIBRAGE <em>À PARTIR DE 13€.</em></h2>
+      </div>
+
+      <div class="tarifs-note">
+        Tarif indiqué à partir de 13€ pour les pneumatiques. Le montant peut varier selon la prestation et le véhicule.
+      </div>
+    </div>
+  </section>
+
+  <section class="tarifs-section dark">
+    <div class="container">
+      <div class="tarifs-head">
+        <div class="eyebrow">LOCATION DE VÉHICULES</div>
+        <h2>CITADINES & <em>UTILITAIRES.</em></h2>
+      </div>
+
+      <div class="tarifs-grid">
+        <article class="tarif-card">
+          <span class="number">01 · CITADINE</span>
+          <h3>LOCATION VOITURE</h3>
+          <p>120 kilomètres compris.</p>
+          <span class="tarif-price">50€ <small>/ jour</small></span>
+        </article>
+
+        <article class="tarif-card">
+          <span class="number">02 · UTILITAIRE</span>
+          <h3>LOCATION UTILITAIRE</h3>
+          <p>120 kilomètres compris.</p>
+          <span class="tarif-price">90€ <small>/ jour</small></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tarifs-cta">
+    <div class="container tarifs-cta-inner">
+      <div>
+        <div class="eyebrow">UN BESOIN ?</div>
+        <h2>PRENEZ RENDEZ-VOUS<br>AVEC L'ÉQUIPE.</h2>
+      </div>
+      <a class="hero-btn primary" href="contact.html">PRENDRE RENDEZ-VOUS <b>→</b></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <a class="brand footer-brand" href="index.html">
+        <span class="brand-mark">ARK<span>LM</span></span><small>MOTORS</small>
+      </a>
+      <p>Votre véhicule, notre expertise.</p>
+    </div>
+    <div>
+      <h4>LIENS UTILES</h4>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="location.html">Location</a>
+      <a href="nettoyage.html">Nettoyage</a>
+      <a href="mecanique.html">Mécanique</a>
+      <a href="carrosserie.html">Carrosserie</a>
+    </div>
+    <div>
+      <h4>CONTACT</h4>
+      <a href="tel:+33603957834">06 03 95 78 34</a>
+      <p>3 rue Claude Chappe<br>66200 Elne</p>
+    </div>
+    <div>
+      <h4>HORAIRES</h4>
+      <p>Lundi — Samedi<br><b>8h00 — 19h00</b></p>
+      <p>Dimanche<br>Fermé</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <b id="year"></b> ARKLM Motors</span>
+    <span>Qualité · Confiance · Sérénité</span>
+  </div>
+</footer>
+
+<a class="mobile-bar" href="tel:+33603957834">
+  <span>☎<small>Appeler</small></span>
+  <span>⌖<small>Itinéraire</small></span>
+  <span>▣<small>Prendre RDV</small></span>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>

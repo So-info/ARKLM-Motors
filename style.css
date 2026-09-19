@@ -969,3 +969,178 @@ img{max-width:100%;height:auto}
   }
 
 }
+/* =========================================
+   LOCATION — CARTES PREMIUM
+========================================= */
+
+.rental {
+  position: relative;
+  overflow: hidden;
+  padding: 0 0 24px;
+  border: 1px solid #d5d7d8;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(0,0,0,.08);
+}
+
+.rental.featured {
+  border-top: 4px solid var(--red);
+}
+
+.rental > span {
+  display: block;
+  padding: 18px 24px 8px;
+  color: var(--red);
+  font: 900 11px "Manrope";
+  letter-spacing: 2px;
+}
+
+.rental .fake-car {
+  height: 220px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: #101214;
+}
+
+.rental .fake-car img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .95;
+  filter: contrast(1.08) saturate(1.1) brightness(.9);
+}
+
+.rental .fake-car::before,
+.rental .fake-car::after {
+  display: none;
+}
+
+.rental h3 {
+  padding: 20px 24px 0;
+  margin: 0;
+  font: 900 58px/.8 "Barlow Condensed";
+  color: #292d30;
+}
+
+.rental h3 small {
+  font: 800 10px "Manrope";
+  color: #777;
+  letter-spacing: .5px;
+}
+
+.rental p {
+  padding: 0 24px;
+  margin: 12px 0;
+  color: #777;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.rental ul {
+  margin: 14px 24px 20px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #e2e3e4;
+}
+
+.rental li {
+  padding: 9px 0;
+  border-bottom: 1px solid #e2e3e4;
+  color: #555;
+  font-size: 10px;
+}
+
+.rental li::before {
+  content: "✓";
+  margin-right: 9px;
+  color: var(--red);
+  font-weight: 900;
+}
+
+.rental .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  margin: 0 24px;
+  width: auto;
+  background: var(--red);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  border-radius: 3px;
+}
+
+
+/* Badge kilométrage */
+
+.rental::after {
+  content: "120 KM INCLUS";
+  position: absolute;
+  top: 194px;
+  right: 14px;
+  z-index: 5;
+  padding: 7px 10px;
+  background: #08090a;
+  color: #fff;
+  font: 800 8px "Manrope";
+  letter-spacing: .5px;
+  border-left: 2px solid var(--red);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .rental-grid {
+    gap: 18px;
+  }
+
+  .rental {
+    padding-bottom: 20px;
+  }
+
+  .rental > span {
+    padding: 16px 20px 8px;
+    font-size: 10px;
+  }
+
+  .rental .fake-car {
+    height: 190px;
+  }
+
+  .rental h3 {
+    padding: 18px 20px 0;
+    font-size: 55px;
+  }
+
+  .rental p {
+    padding: 0 20px;
+    font-size: 10px;
+  }
+
+  .rental ul {
+    margin: 12px 20px 18px;
+  }
+
+  .rental li {
+    padding: 8px 0;
+    font-size: 9px;
+  }
+
+  .rental .btn {
+    margin: 0 20px;
+    height: 46px;
+  }
+
+  .rental::after {
+    top: 164px;
+    right: 12px;
+    font-size: 7px;
+  }
+}

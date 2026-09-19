@@ -1,19 +1,187 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>À propos | ARKLM Motors</title><link rel="stylesheet" href="style.css"></head><body><header class="site-header">
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ARKLM Motors — À propos du garage automobile à Elne.">
+<title>ARKLM Motors — À propos</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ===== ARKLM — PAGE À PROPOS PREMIUM ===== */
+.about-page{background:#08090a;color:#fff}
+.about-hero{margin-top:82px;min-height:430px;display:flex;align-items:flex-end;padding:80px 0 72px;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 25%,rgba(255,32,53,.2),transparent 28%),linear-gradient(135deg,#050607,#101315)}
+.about-hero:before{content:"ARKLM";position:absolute;right:-25px;bottom:-55px;font:900 210px/.75 "Barlow Condensed";color:rgba(255,255,255,.025);letter-spacing:-8px}
+.about-hero:after{content:"";position:absolute;width:600px;height:600px;right:-300px;top:-220px;border:1px solid rgba(255,32,53,.5);border-radius:50%;box-shadow:0 0 0 55px rgba(255,32,53,.025)}
+.about-hero .container{position:relative;z-index:2}
+.about-hero .eyebrow{color:var(--red);letter-spacing:4px}
+.about-hero h1{font:900 clamp(65px,9vw,118px)/.78 "Barlow Condensed";letter-spacing:-3px;margin:18px 0}
+.about-hero h1 em{font-style:normal;color:var(--red)}
+.about-hero p{max-width:520px;color:#aeb4b8;font-size:13px;line-height:1.8;margin:0}
+
+.about-intro{padding:95px 0;background:#08090a}
+.about-intro-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:end}
+.about-intro .eyebrow{color:var(--red);letter-spacing:4px}
+.about-intro h2{font:900 clamp(55px,7vw,88px)/.78 "Barlow Condensed";margin:15px 0 25px;letter-spacing:-2px}
+.about-intro h2 em{font-style:normal;color:var(--red)}
+.about-intro p{color:#969da1;font-size:12px;line-height:1.9;max-width:560px}
+.about-statement{border-left:3px solid var(--red);padding:25px 0 25px 30px}
+.about-statement strong{display:block;font:900 35px/.9 "Barlow Condensed";margin-bottom:12px}
+.about-statement span{color:#8f969a;font-size:10px;line-height:1.7}
+
+.about-values{padding:85px 0;background:#f2f1ed;color:#151719}
+.about-values-head{margin-bottom:34px}
+.about-values-head .eyebrow{color:var(--red);letter-spacing:4px}
+.about-values-head h2{font:900 clamp(52px,7vw,80px)/.8 "Barlow Condensed";margin:12px 0}
+.about-values-head h2 em{font-style:normal;color:var(--red)}
+.about-values-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #d1d2d2}
+.about-value{min-height:235px;padding:27px 24px;border-right:1px solid #d1d2d2;position:relative;overflow:hidden}
+.about-value:last-child{border-right:0}
+.about-value:after{content:"";position:absolute;width:90px;height:90px;right:-45px;bottom:-45px;border:1px solid rgba(255,32,53,.25);border-radius:50%}
+.about-value strong{color:var(--red);font:900 42px "Barlow Condensed"}
+.about-value h3{font:900 29px/.9 "Barlow Condensed";margin:35px 0 12px}
+.about-value p{font-size:10px;line-height:1.7;color:#777;max-width:180px}
+
+.about-why{padding:90px 0;background:linear-gradient(135deg,#111416,#08090a)}
+.about-why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.about-why .eyebrow{color:var(--red);letter-spacing:4px}
+.about-why h2{font:900 clamp(52px,7vw,82px)/.8 "Barlow Condensed";margin:14px 0 25px}
+.about-why h2 em{font-style:normal;color:var(--red)}
+.about-why p{color:#9aa1a5;font-size:11px;line-height:1.8}
+.about-points{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.about-point{padding:25px;background:#0b0d0f;border:1px solid #292e31;border-top:3px solid var(--red)}
+.about-point b{color:var(--red);font:900 11px "Barlow Condensed";letter-spacing:2px}
+.about-point h3{font:900 27px/.9 "Barlow Condensed";margin:18px 0 8px}
+.about-point p{font-size:9px;margin:0;color:#8d9498}
+
+.about-cta{background:var(--red);padding:70px 0;position:relative;overflow:hidden}
+.about-cta:after{content:"MOTORS";position:absolute;right:-25px;bottom:-65px;font:900 180px/.8 "Barlow Condensed";color:rgba(0,0,0,.1)}
+.about-cta-inner{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.about-cta h2{font:900 58px/.8 "Barlow Condensed";margin:0}
+.about-cta .hero-btn{background:#08090a;color:#fff;min-width:260px}
+
+@media(max-width:650px){
+ .about-hero{margin-top:66px;min-height:330px;padding:65px 0 55px}
+ .about-hero:before{font-size:110px;bottom:-30px}
+ .about-hero h1{font-size:64px;letter-spacing:-1px}
+ .about-hero p{font-size:11px}
+ .about-intro{padding:65px 0}
+ .about-intro-grid{grid-template-columns:1fr;gap:30px}
+ .about-intro h2{font-size:54px}
+ .about-statement{padding-left:20px}
+ .about-statement strong{font-size:31px}
+ .about-values{padding:60px 0}
+ .about-values-head h2{font-size:52px}
+ .about-values-grid{grid-template-columns:1fr 1fr}
+ .about-value{min-height:205px;padding:22px 18px}
+ .about-value:nth-child(2){border-right:0}
+ .about-value:nth-child(-n+2){border-bottom:1px solid #d1d2d2}
+ .about-value h3{font-size:25px;margin-top:28px}
+ .about-why{padding:65px 0}
+ .about-why-grid{grid-template-columns:1fr;gap:30px}
+ .about-why h2{font-size:53px}
+ .about-points{grid-template-columns:1fr 1fr}
+ .about-point{padding:19px 15px}
+ .about-point h3{font-size:23px}
+ .about-cta{padding:55px 0}
+ .about-cta-inner{flex-direction:column;align-items:stretch}
+ .about-cta h2{font-size:48px}
+ .about-cta .hero-btn{width:100%}
+}
+</style>
+</head>
+
+<body class="about-page">
+<header class="site-header">
   <div class="container nav">
     <a class="brand" href="index.html"><span class="brand-mark">ARK<span>LM</span></span><small>MOTORS</small></a>
     <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav>
-      <a href="index.html">Accueil</a><a href="location.html">Location</a><a href="nettoyage.html">Nettoyage</a><a href="mecanique.html">Mécanique</a><a href="carrosserie.html">Carrosserie</a><a href="apropos.html">À propos</a><a href="contact.html">Contact</a>
+      <a href="index.html">Accueil</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="location.html">Location</a>
+      <a href="nettoyage.html">Nettoyage</a>
+      <a href="mecanique.html">Mécanique</a>
+      <a href="carrosserie.html">Carrosserie</a>
+      <a class="active" href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-actions"><a class="tel" href="tel:+33603957834">☎ 06 03 95 78 34</a><a class="nav-cta" href="contact.html">PRENDRE RDV <b>→</b></a></div>
   </div>
-</header><main><section class="inner-hero"><div class="container"><div class="eyebrow">ARKLM MOTORS · À PROPOS</div><h1>UNE ÉQUIPE<br><em>PASSIONNÉE.</em></h1><p>Un garage multiservices pensé pour simplifier l'entretien de votre véhicule.</p></div></section><section class="section"><div class="container about-page"><div><div class="eyebrow dark">ARKLM MOTORS</div><h2>LA PASSION DE<br><em>L'AUTOMOBILE.</em></h2><p>ARKLM Motors rassemble plusieurs métiers autour d'une même exigence : prendre soin de votre véhicule avec sérieux, transparence et proximité.</p></div><div class="values"><div><b>01</b><h3>EXPERTISE</h3><p>Une équipe expérimentée et passionnée.</p></div><div><b>02</b><h3>TRANSPARENCE</h3><p>Des tarifs annoncés clairement.</p></div><div><b>03</b><h3>QUALITÉ</h3><p>Des produits et équipements professionnels.</p></div><div><b>04</b><h3>PROXIMITÉ</h3><p>Un garage accessible à Elne.</p></div></div></div></section></main><footer>
+</header>
+
+<main>
+<section class="about-hero">
+  <div class="container">
+    <div class="eyebrow">ARKLM MOTORS · À PROPOS</div>
+    <h1>UNE ÉQUIPE<br><em>PASSIONNÉE.</em></h1>
+    <p>Un garage multiservices pensé pour simplifier l'entretien de votre véhicule.</p>
+  </div>
+</section>
+
+<section class="about-intro">
+  <div class="container about-intro-grid">
+    <div>
+      <div class="eyebrow">ARKLM MOTORS</div>
+      <h2>LA PASSION DE<br><em>L'AUTOMOBILE.</em></h2>
+      <p>ARKLM Motors rassemble plusieurs métiers autour d'une même exigence : prendre soin de votre véhicule avec sérieux, transparence et proximité.</p>
+    </div>
+    <div class="about-statement">
+      <strong>PLUS QU'UN GARAGE.<br>UN PARTENAIRE.</strong>
+      <span>Une seule adresse pour prendre soin de votre véhicule, avec des solutions simples et un accompagnement de proximité.</span>
+    </div>
+  </div>
+</section>
+
+<section class="about-values">
+  <div class="container">
+    <div class="about-values-head">
+      <div class="eyebrow">NOS VALEURS</div>
+      <h2>CE QUI NOUS <em>GUIDE.</em></h2>
+    </div>
+    <div class="about-values-grid">
+      <article class="about-value"><strong>01</strong><h3>EXPERTISE</h3><p>Une équipe expérimentée et passionnée.</p></article>
+      <article class="about-value"><strong>02</strong><h3>TRANSPARENCE</h3><p>Des tarifs annoncés clairement.</p></article>
+      <article class="about-value"><strong>03</strong><h3>QUALITÉ</h3><p>Des produits et équipements sélectionnés avec soin.</p></article>
+      <article class="about-value"><strong>04</strong><h3>PROXIMITÉ</h3><p>Un garage accessible à Elne.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="about-why">
+  <div class="container about-why-grid">
+    <div>
+      <div class="eyebrow">NOTRE ENGAGEMENT</div>
+      <h2>LE BON SERVICE,<br><em>SANS COMPLICATION.</em></h2>
+      <p>De la première prise de contact à la restitution de votre véhicule, nous privilégions la clarté, la proximité et la qualité du travail.</p>
+    </div>
+    <div class="about-points">
+      <article class="about-point"><b>01</b><h3>CLARTÉ</h3><p>Des explications simples et un devis avant intervention.</p></article>
+      <article class="about-point"><b>02</b><h3>POLYVALENCE</h3><p>Plusieurs métiers autour des besoins de votre véhicule.</p></article>
+      <article class="about-point"><b>03</b><h3>PROXIMITÉ</h3><p>Une adresse locale à Elne.</p></article>
+      <article class="about-point"><b>04</b><h3>SÉRÉNITÉ</h3><p>Un accompagnement du premier contact à la restitution.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="about-cta">
+  <div class="container about-cta-inner">
+    <h2>VOTRE VÉHICULE MÉRITE<br>NOTRE EXPERTISE.</h2>
+    <a class="hero-btn primary" href="contact.html">PARLER À L'ÉQUIPE <b>→</b></a>
+  </div>
+</section>
+</main>
+
+<footer>
   <div class="container footer-grid">
     <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">ARK<span>LM</span></span><small>MOTORS</small></a><p>Votre véhicule, notre expertise.</p></div>
-    <div><h4>LIENS UTILES</h4><a href="index.html">Accueil</a><a href="location.html">Location</a><a href="nettoyage.html">Nettoyage</a><a href="mecanique.html">Mécanique</a><a href="carrosserie.html">Carrosserie</a><a href="contact.html">Contact</a></div>
-    <div><h4>NOS SERVICES</h4><a href="mecanique.html">Entretien</a><a href="mecanique.html">Réparation</a><a href="mecanique.html">Diagnostic</a><a href="carrosserie.html">Carrosserie</a><a href="nettoyage.html">Nettoyage</a><a href="location.html">Location</a></div>
-    <div><h4>CONTACT</h4><a href="tel:+33603957834">06 03 95 78 34</a><p>3 rue Claude Chappe<br>66200 Elne</p><a href="mailto:contact@arklm-motors.fr">contact@arklm-motors.fr</a></div>
+    <div><h4>LIENS UTILES</h4><a href="tarifs.html">Tarifs</a><a href="location.html">Location</a><a href="nettoyage.html">Nettoyage</a><a href="mecanique.html">Mécanique</a><a href="carrosserie.html">Carrosserie</a></div>
+    <div><h4>CONTACT</h4><a href="tel:+33603957834">06 03 95 78 34</a><p>3 rue Claude Chappe<br>66200 Elne</p></div>
+    <div><h4>HORAIRES</h4><p>Lundi — Samedi<br><b>8h00 — 19h00</b></p><p>Dimanche<br>Fermé</p></div>
   </div>
-  <div class="container footer-bottom"><span>© <b id="year"></b> ARKLM Motors. Tous droits réservés.</span><span>Qualité · Confiance · Sérénité</span><span>Mentions légales · Politique de confidentialité</span></div>
+  <div class="container footer-bottom"><span>© <b id="year"></b> ARKLM Motors</span><span>Qualité · Confiance · Sérénité</span></div>
 </footer>
-<a class="mobile-bar" href="tel:+33603957834"><span>☎<small>Appeler</small></span><span>⌖<small>Itinéraire</small></span><span>▣<small>Prendre RDV</small></span></a><script src="script.js"></script></body></html>
+
+<a class="mobile-bar" href="tel:+33603957834"><span>☎<small>Appeler</small></span><span>⌖<small>Itinéraire</small></span><span>▣<small>Prendre RDV</small></span></a>
+<script src="script.js"></script>
+</body>
+</html>

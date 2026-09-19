@@ -7,142 +7,36 @@
   <title>ARKLM Motors — Tarifs</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ===== PAGE TARIFS ===== */
-    .tarifs-page { background:#f6f6f3; color:#151719; }
-    .tarifs-hero {
-      margin-top:82px;
-      background:#050607;
-      color:#fff;
-      padding:90px 0 70px;
-      position:relative;
-      overflow:hidden;
-    }
-    .tarifs-hero:after {
-      content:"";
-      position:absolute;
-      width:520px;height:520px;
-      right:-260px;top:-180px;
-      border:1px solid rgba(255,32,53,.45);
-      border-radius:50%;
-    }
-    .tarifs-hero h1 {
-      font:900 clamp(58px,8vw,100px)/.82 "Barlow Condensed";
-      margin:15px 0;
-      letter-spacing:-2px;
-    }
-    .tarifs-hero h1 em { font-style:normal;color:var(--red); }
-    .tarifs-hero p { max-width:520px;color:#9aa1a5;font-size:13px;line-height:1.8; }
-
-    .tarifs-section { padding:70px 0; }
-    .tarifs-section.dark { background:#08090a;color:#fff; }
-    .tarifs-head { margin-bottom:30px; }
-    .tarifs-head .eyebrow { color:var(--red); }
-    .tarifs-head h2 {
-      font:900 clamp(42px,6vw,68px)/.88 "Barlow Condensed";
-      margin:10px 0;
-    }
-    .tarifs-head h2 em { font-style:normal;color:var(--red); }
-
-    .tarifs-grid {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-    }
-    .tarif-card {
-      background:#fff;
-      border:1px solid #d9dbdc;
-      padding:28px;
-      min-height:180px;
-      position:relative;
-    }
-    .dark .tarif-card { background:#111416;border-color:#292e31; }
-    .tarif-card .number {
-      color:var(--red);
-      font:800 12px "Barlow Condensed";
-      letter-spacing:2px;
-    }
-    .tarif-card h3 {
-      font:900 25px/.95 "Barlow Condensed";
-      margin:14px 0 8px;
-    }
-    .tarif-card p {
-      color:#777;
-      font-size:10px;
-      line-height:1.6;
-      margin:0;
-    }
-    .dark .tarif-card p { color:#92999d; }
-    .tarif-price {
-      display:block;
-      margin-top:20px;
-      font:900 46px/.8 "Barlow Condensed";
-      color:var(--red);
-    }
-    .tarif-price small {
-      font:800 10px Manrope;
-      color:#777;
-    }
-    .dark .tarif-price small { color:#92999d; }
-
-    .tarifs-list {
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:1px;
-      background:#d7d9da;
-      margin-top:28px;
-    }
-    .tarifs-list div {
-      background:#fff;
-      padding:20px;
-      font-size:11px;
-      font-weight:700;
-    }
-    .tarifs-list b { color:var(--red); margin-right:8px; }
-
-    .tarifs-note {
-      margin-top:20px;
-      padding:18px 20px;
-      border-left:3px solid var(--red);
-      background:#fff;
-      color:#777;
-      font-size:10px;
-      line-height:1.7;
-    }
-    .dark .tarifs-note { background:#111416;color:#92999d; }
-
-    .tarifs-cta {
-      background:var(--red);
-      color:#fff;
-      padding:60px 0;
-    }
-    .tarifs-cta-inner {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:30px;
-    }
-    .tarifs-cta h2 {
-      font:900 52px/.9 "Barlow Condensed";
-      margin:0;
-    }
-    .tarifs-cta .hero-btn {
-      background:#08090a;
-      color:#fff;
-      min-width:260px;
-    }
-
-    @media(max-width:650px){
-      .tarifs-hero { margin-top:66px;padding:72px 0 55px; }
-      .tarifs-hero h1 { font-size:62px; }
-      .tarifs-section { padding:50px 0; }
-      .tarifs-grid { grid-template-columns:1fr; gap:8px; }
-      .tarif-card { min-height:0;padding:25px; }
-      .tarifs-list { grid-template-columns:1fr; }
-      .tarifs-cta-inner { display:flex;flex-direction:column;align-items:stretch; }
-      .tarifs-cta h2 { font-size:45px; }
-      .tarifs-cta .hero-btn { width:100%; }
-    }
-  </style>
+.tarifs-page{--paper:#f3f2ee;background:var(--paper);color:#151719}
+.tarifs-hero{margin-top:82px;min-height:430px;display:flex;align-items:center;background:radial-gradient(circle at 82% 25%,rgba(255,31,52,.2),transparent 30%),linear-gradient(135deg,#050607,#111416);color:#fff;padding:90px 0 85px;position:relative;overflow:hidden}
+.tarifs-hero:before{content:"TARIFS";position:absolute;right:-35px;bottom:-75px;font:900 230px/.8 "Barlow Condensed";color:rgba(255,255,255,.025);letter-spacing:-8px}
+.tarifs-hero:after{content:"";position:absolute;width:620px;height:620px;right:-300px;top:-220px;border:1px solid rgba(255,32,53,.48);border-radius:50%;box-shadow:0 0 0 55px rgba(255,32,53,.025),0 0 0 110px rgba(255,32,53,.015)}
+.tarifs-hero .container{position:relative;z-index:2}.tarifs-hero .eyebrow{color:var(--red);letter-spacing:4px}
+.tarifs-hero h1{font:900 clamp(68px,9vw,118px)/.78 "Barlow Condensed";margin:18px 0 22px;letter-spacing:-3px}.tarifs-hero h1 em{font-style:normal;color:var(--red)}
+.tarifs-hero p{max-width:560px;color:#aeb4b8;font-size:13px;line-height:1.9;margin:0}
+.tarifs-section{padding:88px 0;position:relative}.tarifs-section.dark{background:radial-gradient(circle at 90% 20%,rgba(255,32,53,.1),transparent 26%),#08090a;color:#fff}
+.tarifs-head{position:relative;margin-bottom:34px}.tarifs-head:after{content:"";display:block;width:55px;height:3px;background:var(--red);margin-top:20px}
+.tarifs-head .eyebrow{color:var(--red);letter-spacing:4px}.tarifs-head h2{font:900 clamp(48px,6vw,76px)/.82 "Barlow Condensed";margin:12px 0 0;letter-spacing:-1px}.tarifs-head h2 em{font-style:normal;color:var(--red)}
+.tarifs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tarif-card{min-height:250px;padding:30px;position:relative;overflow:hidden;background:#fff;border:1px solid #d7d8d8;border-top:4px solid #111416;box-shadow:0 14px 35px rgba(10,12,13,.08);transition:.25s}
+.tarif-card:hover{transform:translateY(-5px);box-shadow:0 22px 45px rgba(10,12,13,.14);border-top-color:var(--red)}
+.tarif-card:after{content:"";position:absolute;width:120px;height:120px;right:-60px;bottom:-60px;border:1px solid rgba(255,32,53,.16);border-radius:50%}
+.dark .tarif-card{background:#111416;border-color:#292e31;border-top-color:var(--red);box-shadow:0 18px 40px rgba(0,0,0,.24)}
+.tarif-card .number{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:24px;padding:0 8px;background:var(--red);color:#fff;font:900 10px "Barlow Condensed";letter-spacing:1px}
+.tarif-card h3{max-width:95%;font:900 29px/.92 "Barlow Condensed";margin:25px 0 9px;text-transform:uppercase}.tarif-card p{color:#777;font-size:10px;line-height:1.65;margin:0}.dark .tarif-card p{color:#9aa1a5}
+.tarif-price{display:flex;align-items:baseline;gap:7px;margin-top:28px;font:900 62px/.75 "Barlow Condensed";color:var(--red);letter-spacing:-1px}.tarif-price small{font:800 9px "Manrope";color:#777;letter-spacing:.3px;text-transform:uppercase}.dark .tarif-price small{color:#a0a5a8}
+.tarifs-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.tarifs-list div{position:relative;background:#111416;color:#e9eaeb;padding:18px 18px 18px 48px;min-height:56px;display:flex;align-items:center;font-size:10px;font-weight:800;border:1px solid #292e31}.tarifs-list b{position:absolute;left:18px;color:var(--red);font:900 13px "Barlow Condensed"}
+.tarifs-note{margin-top:22px;padding:20px 22px;border:1px solid #d7d8d8;border-left:4px solid var(--red);background:#fff;color:#686d70;font-size:10px;line-height:1.7;box-shadow:0 10px 25px rgba(0,0,0,.05)}.dark .tarifs-note{background:#111416;border-color:#292e31;color:#9aa1a5}
+.tarifs-cta{position:relative;overflow:hidden;background:var(--red);color:#fff;padding:72px 0}.tarifs-cta:after{content:"RDV";position:absolute;right:-20px;bottom:-75px;font:900 210px/.8 "Barlow Condensed";color:rgba(0,0,0,.1)}
+.tarifs-cta-inner{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:35px}.tarifs-cta .eyebrow{color:#fff}.tarifs-cta h2{font:900 58px/.82 "Barlow Condensed";margin:8px 0 0;text-transform:uppercase}.tarifs-cta .hero-btn{min-width:270px;min-height:58px;background:#08090a;color:#fff;border:1px solid rgba(255,255,255,.18)}
+@media(max-width:650px){
+.tarifs-hero{margin-top:66px;min-height:330px;padding:65px 0 55px}.tarifs-hero:before{font-size:125px;right:-15px;bottom:-35px}.tarifs-hero h1{font-size:65px;letter-spacing:-1.5px}.tarifs-hero p{font-size:11px;line-height:1.75;max-width:330px}
+.tarifs-section{padding:58px 0}.tarifs-head{margin-bottom:25px}.tarifs-head h2{font-size:48px}.tarifs-grid{grid-template-columns:1fr;gap:12px}
+.tarif-card{min-height:205px;padding:24px 22px}.tarif-card h3{font-size:28px;margin-top:20px}.tarif-price{margin-top:23px;font-size:57px}
+.tarifs-list{grid-template-columns:1fr;gap:7px;margin-top:14px}.tarifs-list div{min-height:50px}
+.tarifs-cta{padding:55px 0}.tarifs-cta-inner{flex-direction:column;align-items:stretch;gap:28px}.tarifs-cta h2{font-size:47px}.tarifs-cta .hero-btn{width:100%;min-width:0}
+}
+</style>
 </head>
 
 <body class="tarifs-page">

@@ -1144,3 +1144,1234 @@ img{max-width:100%;height:auto}
     font-size: 7px;
   }
 }
+
+/* =========================================================
+   HEADER PC — ARKLM MOTORS
+   Correction chevauchement / alignement
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+    header,
+    .site-header,
+    .main-header {
+        width: 100%;
+        height: 66px;
+        min-height: 66px;
+        position: relative;
+        z-index: 9999;
+    }
+
+    header .header-inner,
+    .site-header .header-inner,
+    .main-header .header-inner {
+        width: min(1400px, calc(100% - 50px));
+        height: 66px;
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 24px;
+        white-space: nowrap;
+    }
+
+    /* LOGO */
+    header .logo,
+    .site-header .logo,
+    .main-header .logo {
+        flex: 0 0 auto;
+        width: 105px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .logo img,
+    .site-header .logo img,
+    .main-header .logo img {
+        width: 90px;
+        max-width: 90px;
+        height: auto;
+        display: block;
+    }
+
+    /* MENU */
+    header nav,
+    .site-header nav,
+    .main-header nav {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(14px, 1.4vw, 25px);
+        min-width: 0;
+    }
+
+    header nav a,
+    .site-header nav a,
+    .main-header nav a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: .3px;
+
+        white-space: nowrap;
+        text-decoration: none;
+
+        padding: 8px 0;
+
+        transition:
+            color .2s ease,
+            transform .2s ease;
+    }
+
+    header nav a:hover,
+    .site-header nav a:hover,
+    .main-header nav a:hover {
+        color: #ff1f2d;
+        transform: translateY(-1px);
+    }
+
+    /* BLOC CONTACT */
+    .header-contact,
+    .contact-header,
+    .header-info {
+        flex: 0 0 auto;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        font-size: 9px;
+        line-height: 1.3;
+        white-space: nowrap;
+    }
+
+    /* TELEPHONE */
+    .header-phone,
+    .phone-header {
+        flex: 0 0 auto;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 34px;
+        padding: 0 12px;
+
+        border: 1px solid rgba(255,255,255,.25);
+        border-radius: 20px;
+
+        font-size: 10px;
+        font-weight: 700;
+
+        white-space: nowrap;
+        text-decoration: none;
+
+        transition:
+            border-color .2s ease,
+            background .2s ease;
+    }
+
+    .header-phone:hover,
+    .phone-header:hover {
+        border-color: #ff1f2d;
+        background: rgba(255,31,45,.08);
+    }
+
+    /* BOUTON RDV */
+    .header-cta,
+    .btn-header,
+    .header-button {
+        flex: 0 0 auto;
+
+        height: 34px;
+        padding: 0 16px;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #ff1f2d;
+        color: #fff !important;
+
+        border-radius: 3px;
+
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: .3px;
+
+        white-space: nowrap;
+        text-decoration: none;
+
+        transition:
+            background .2s ease,
+            transform .2s ease;
+    }
+
+    .header-cta:hover,
+    .btn-header:hover,
+    .header-button:hover {
+        background: #d9000d;
+        transform: translateY(-1px);
+    }
+}
+
+
+/* =========================================================
+   PC ÉCRANS MOYENS
+   ========================================================= */
+
+@media (min-width: 901px) and (max-width: 1250px) {
+
+    header .header-inner,
+    .site-header .header-inner,
+    .main-header .header-inner {
+        width: calc(100% - 30px);
+        gap: 12px;
+    }
+
+    header .logo,
+    .site-header .logo,
+    .main-header .logo {
+        width: 85px;
+    }
+
+    header .logo img,
+    .site-header .logo img,
+    .main-header .logo img {
+        width: 75px;
+        max-width: 75px;
+    }
+
+    header nav,
+    .site-header nav,
+    .main-header nav {
+        gap: 11px;
+    }
+
+    header nav a,
+    .site-header nav a,
+    .main-header nav a {
+        font-size: 9px;
+    }
+
+    .header-contact,
+    .contact-header,
+    .header-info {
+        display: none;
+    }
+
+    .header-phone,
+    .phone-header {
+        font-size: 9px;
+        padding: 0 9px;
+    }
+
+    .header-cta,
+    .btn-header,
+    .header-button {
+        padding: 0 11px;
+        font-size: 8px;
+    }
+}
+
+/* =========================================================
+   ARKLM — CORRECTION HEADER PC
+   ========================================================= */
+
+/* Le bloc de contact dans le menu est réservé au mobile */
+.mobile-menu-contact {
+    display: none !important;
+}
+
+@media (min-width: 651px) {
+
+    .site-header {
+        height: 70px;
+    }
+
+    .nav {
+        height: 70px;
+        gap: 18px;
+        width: min(calc(100% - 36px), 1380px);
+    }
+
+    /* LOGO */
+    .brand {
+        flex: 0 0 110px;
+        min-width: 110px;
+    }
+
+    .brand-mark {
+        font-size: 32px;
+    }
+
+    .brand small {
+        font-size: 7px;
+        letter-spacing: 5px;
+        margin-left: 36px;
+    }
+
+    /* MENU */
+    .nav nav {
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .nav nav a {
+        flex: 0 0 auto;
+        padding: 10px 8px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    /* CONTACT + RDV */
+    .nav-actions {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .tel {
+        height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 11px;
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .nav-cta {
+        height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 13px;
+        font-size: 8px;
+        white-space: nowrap;
+    }
+
+    .nav-cta b {
+        font-size: 11px;
+        margin-left: 6px;
+    }
+
+    /* Le hero commence juste sous le header */
+    .hero-new {
+        margin-top: 70px;
+    }
+
+    .inner-hero {
+        margin-top: 70px;
+    }
+}
+
+
+/* =========================================================
+   ÉCRANS PC MOYENS
+   ========================================================= */
+
+@media (min-width: 651px) and (max-width: 1250px) {
+
+    .nav {
+        width: calc(100% - 24px);
+        gap: 10px;
+    }
+
+    .brand {
+        flex-basis: 90px;
+        min-width: 90px;
+    }
+
+    .brand-mark {
+        font-size: 27px;
+    }
+
+    .brand small {
+        font-size: 6px;
+        letter-spacing: 4px;
+        margin-left: 30px;
+    }
+
+    .nav nav a {
+        padding: 9px 5px;
+        font-size: 8px;
+    }
+
+    .tel {
+        padding: 0 8px;
+        font-size: 8px;
+    }
+
+    .nav-cta {
+        padding: 0 9px;
+        font-size: 7px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — ON RÉACTIVE LE BLOC CONTACT
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .mobile-menu-contact {
+        display: block !important;
+    }
+
+    .site-header {
+        height: 66px;
+    }
+
+    .nav {
+        height: 66px;
+    }
+
+    .hero-new {
+        margin-top: 66px;
+    }
+
+    .inner-hero {
+        margin-top: 66px;
+    }
+}
+/* =========================================================
+   ARKLM — HEADER PREMIUM FINAL
+   PC + correction espace blanc
+   ========================================================= */
+
+@media (min-width: 651px) {
+
+    /* HEADER */
+    .site-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
+        height: 64px !important;
+        min-height: 64px !important;
+
+        background: rgba(5,6,7,.96) !important;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+
+        border-bottom: 1px solid rgba(255,255,255,.08) !important;
+
+        z-index: 9999 !important;
+    }
+
+    /* Petit trait rouge premium */
+    .site-header:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 1px;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255,32,53,.25) 15%,
+                #ff2035 50%,
+                rgba(255,32,53,.25) 85%,
+                transparent 100%
+            );
+
+        opacity: .8;
+    }
+
+
+    /* CONTENEUR */
+    .site-header .nav {
+        width: min(1400px, calc(100% - 36px)) !important;
+        height: 64px !important;
+        margin: 0 auto !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 22px !important;
+    }
+
+
+    /* =====================================================
+       LOGO
+       ===================================================== */
+
+    .site-header .brand {
+        flex: 0 0 108px !important;
+        min-width: 108px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+
+        line-height: .75 !important;
+    }
+
+    .site-header .brand-mark {
+        font-size: 31px !important;
+        letter-spacing: -1.5px !important;
+    }
+
+    .site-header .brand small {
+        font-size: 6px !important;
+        letter-spacing: 5px !important;
+        margin: 6px 0 0 35px !important;
+    }
+
+
+    /* =====================================================
+       MENU
+       ===================================================== */
+
+    .site-header .nav nav {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 2px !important;
+    }
+
+    .site-header .nav nav a {
+        flex: 0 0 auto !important;
+
+        position: relative !important;
+
+        padding: 8px 8px !important;
+
+        color: #969da1 !important;
+
+        font-size: 9px !important;
+        font-weight: 800 !important;
+
+        letter-spacing: .25px !important;
+
+        white-space: nowrap !important;
+
+        transition:
+            color .2s ease,
+            transform .2s ease !important;
+    }
+
+    .site-header .nav nav a:hover {
+        color: #fff !important;
+        transform: translateY(-1px);
+    }
+
+    /* page active */
+    .site-header .nav nav a.active {
+        color: #fff !important;
+    }
+
+    .site-header .nav nav a.active:after {
+        content: "";
+
+        position: absolute;
+
+        left: 50%;
+        bottom: 0;
+
+        width: 18px;
+        height: 2px;
+
+        transform: translateX(-50%);
+
+        background: #ff2035;
+
+        box-shadow: 0 0 10px rgba(255,32,53,.5);
+    }
+
+
+    /* =====================================================
+       ACTIONS
+       ===================================================== */
+
+    .site-header .nav-actions {
+        flex: 0 0 auto !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 7px !important;
+    }
+
+
+    /* TELEPHONE */
+    .site-header .tel {
+        height: 34px !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 0 12px !important;
+
+        border: 1px solid rgba(255,32,53,.45) !important;
+        border-radius: 20px !important;
+
+        background: rgba(255,255,255,.025) !important;
+
+        color: #fff !important;
+
+        font-size: 8px !important;
+        font-weight: 900 !important;
+
+        white-space: nowrap !important;
+
+        transition:
+            background .2s ease,
+            border-color .2s ease,
+            transform .2s ease !important;
+    }
+
+    .site-header .tel:hover {
+        background: rgba(255,32,53,.10) !important;
+        border-color: #ff2035 !important;
+        transform: translateY(-1px);
+    }
+
+
+    /* BOUTON RDV */
+    .site-header .nav-cta {
+        height: 34px !important;
+
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 0 15px !important;
+
+        background: #ff2035 !important;
+        color: #fff !important;
+
+        border-radius: 3px !important;
+
+        font-size: 8px !important;
+        font-weight: 900 !important;
+
+        letter-spacing: .4px !important;
+
+        white-space: nowrap !important;
+
+        box-shadow:
+            0 5px 18px rgba(255,32,53,.18);
+
+        transition:
+            background .2s ease,
+            transform .2s ease,
+            box-shadow .2s ease !important;
+    }
+
+    .site-header .nav-cta:hover {
+        background: #ff3347 !important;
+
+        transform: translateY(-1px);
+
+        box-shadow:
+            0 8px 25px rgba(255,32,53,.30);
+    }
+
+    .site-header .nav-cta b {
+        margin-left: 7px;
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       SUPPRESSION DU BLOC CONTACT SUR PC
+       ===================================================== */
+
+    .site-header .mobile-menu-contact {
+        display: none !important;
+    }
+
+
+    /* =====================================================
+       SUPPRESSION DE LA LIGNE BLANCHE
+       ===================================================== */
+
+    .hero-new {
+        margin-top: 0 !important;
+    }
+
+    .inner-hero {
+        margin-top: 0 !important;
+    }
+
+    /* Le header étant fixed, on réserve son espace ici */
+    body.home-page .hero-new {
+        padding-top: 64px !important;
+        box-sizing: border-box !important;
+    }
+
+}
+
+
+/* =========================================================
+   PC MOYEN — 651 → 1100
+   ========================================================= */
+
+@media (min-width: 651px) and (max-width: 1100px) {
+
+    .site-header .nav {
+        width: calc(100% - 20px) !important;
+        gap: 8px !important;
+    }
+
+    .site-header .brand {
+        flex-basis: 82px !important;
+        min-width: 82px !important;
+    }
+
+    .site-header .brand-mark {
+        font-size: 25px !important;
+    }
+
+    .site-header .brand small {
+        font-size: 5px !important;
+        margin-left: 28px !important;
+    }
+
+    .site-header .nav nav a {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        font-size: 7px !important;
+    }
+
+    .site-header .tel {
+        padding: 0 8px !important;
+        font-size: 7px !important;
+    }
+
+    .site-header .nav-cta {
+        padding: 0 9px !important;
+        font-size: 7px !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE — NE PAS TOUCHER AU MENU
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .site-header {
+        height: 66px !important;
+    }
+
+    .site-header .nav {
+        height: 66px !important;
+    }
+
+    .site-header .mobile-menu-contact {
+        display: block !important;
+    }
+}
+
+/* =========================================================
+   ARKLM MOTORS — FOOTER PREMIUM
+   ========================================================= */
+
+footer {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,32,53,.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #090a0b 0%,
+            #050607 100%
+        );
+
+    color: #fff;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+
+/* Ligne rouge supérieure */
+footer:before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #ff2035 25%,
+            #ff2035 75%,
+            transparent
+        );
+
+    opacity: .9;
+}
+
+
+/* Gros ARKLM fantôme */
+footer:after {
+    content: "ARKLM";
+
+    position: absolute;
+
+    right: -40px;
+    bottom: -65px;
+
+    font:
+        900 220px/.7
+        "Barlow Condensed",
+        sans-serif;
+
+    letter-spacing: -8px;
+
+    color: rgba(255,255,255,.025);
+
+    pointer-events: none;
+}
+
+
+/* CONTENU */
+footer .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   GRILLE
+   ========================================================= */
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 55px;
+
+    padding-top: 70px;
+    padding-bottom: 55px;
+}
+
+
+/* =========================================================
+   MARQUE
+   ========================================================= */
+
+.footer-grid > div:first-child {
+    grid-column: auto;
+}
+
+
+.footer-brand {
+    position: relative;
+}
+
+
+.footer-brand .brand-mark {
+    font-size: 48px;
+    line-height: .75;
+    letter-spacing: -3px;
+}
+
+
+.footer-brand small {
+    display: block;
+
+    margin-top: 10px;
+    margin-left: 55px;
+
+    font-size: 7px;
+    letter-spacing: 6px;
+
+    color: #ff2035;
+}
+
+
+.footer-brand p {
+    max-width: 260px;
+
+    margin-top: 22px;
+
+    color: #777e83;
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* phrase signature */
+.footer-brand:after {
+    content: "QUALITÉ · CONFIANCE · SÉRÉNITÉ";
+
+    display: block;
+
+    margin-top: 25px;
+
+    color: #4d5357;
+
+    font-size: 7px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TITRES
+   ========================================================= */
+
+footer h4 {
+
+    margin: 4px 0 20px;
+
+    color: #ff2035;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+
+footer h4:before {
+    content: "";
+
+    display: inline-block;
+
+    width: 18px;
+    height: 2px;
+
+    margin-right: 8px;
+
+    vertical-align: middle;
+
+    background: #ff2035;
+}
+
+
+/* =========================================================
+   LIENS
+   ========================================================= */
+
+footer a {
+
+    color: #858b8f;
+
+    font-size: 10px;
+
+    line-height: 1.9;
+
+    text-decoration: none;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+footer a:hover {
+    color: #fff;
+}
+
+
+/* liens utiles */
+footer .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+footer .footer-phone {
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #fff;
+
+    font-size: 17px;
+    font-weight: 900;
+
+    letter-spacing: .5px;
+}
+
+
+footer .footer-phone:hover {
+    color: #ff2035;
+}
+
+
+footer .footer-address {
+
+    color: #70767a;
+
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+
+/* bouton itinéraire */
+footer .footer-map {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 34px;
+
+    margin-top: 16px;
+    padding: 0 14px;
+
+    border: 1px solid rgba(255,32,53,.4);
+    border-radius: 2px;
+
+    color: #fff;
+
+    font-size: 8px;
+    font-weight: 900;
+
+    letter-spacing: .8px;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease;
+}
+
+
+footer .footer-map:hover {
+    background: #ff2035;
+    border-color: #ff2035;
+}
+
+
+/* =========================================================
+   HORAIRES
+   ========================================================= */
+
+.footer-hours {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.footer-hours div {
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-hours strong {
+
+    color: #fff;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+.footer-hours span {
+
+    margin-top: 3px;
+
+    color: #6f7579;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   BAS DU FOOTER
+   ========================================================= */
+
+.footer-bottom {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 0 22px;
+
+    border-top: 1px solid rgba(255,255,255,.07);
+}
+
+
+.footer-bottom:before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: 0;
+
+    width: 90px;
+    height: 1px;
+
+    background: #ff2035;
+}
+
+
+.footer-bottom p {
+
+    margin: 0;
+
+    color: #555b5f;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+
+.footer-bottom span {
+
+    color: #555b5f;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+}
+
+
+.footer-bottom span b {
+    color: #ff2035;
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-grid {
+        grid-template-columns: 1.3fr 1fr 1fr;
+        gap: 30px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    footer {
+        padding-bottom: 20px;
+    }
+
+    footer:after {
+        font-size: 120px;
+        right: -25px;
+        bottom: -25px;
+    }
+
+    .footer-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 38px 22px;
+
+        padding-top: 55px;
+        padding-bottom: 40px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand .brand-mark {
+        font-size: 40px;
+    }
+
+    .footer-brand p {
+        max-width: 300px;
+    }
+
+    footer h4 {
+        margin-bottom: 14px;
+    }
+
+    footer a {
+        font-size: 9px;
+    }
+
+    footer .footer-phone {
+        font-size: 15px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+.footer-bottom span b {
+    color: #ff2035;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.footer-bottom span b:hover {
+    color: #fff;
+}
